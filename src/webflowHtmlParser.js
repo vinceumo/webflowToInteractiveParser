@@ -2,7 +2,7 @@ const fs = require("fs");
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 
-const webflowHtmlParser = (htmlPath, awsUrl) => {
+const webflowHtmlParser = (htmlPath, assestsUrl) => {
   const externalUrlRgx = new RegExp(
     /^(http|https)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,6}(\/\S*)?$/
   );
@@ -42,7 +42,7 @@ const webflowHtmlParser = (htmlPath, awsUrl) => {
         const src = srcEl.getAttribute(`${attr}`);
         const isExternalUrl = externalUrlRgx.test(src);
         if (!isExternalUrl) {
-          srcEl.setAttribute(`${attr}`, `${awsUrl}${src}`);
+          srcEl.setAttribute(`${attr}`, `${assestsUrl}${src}`);
         }
       });
     });
@@ -55,7 +55,7 @@ const webflowHtmlParser = (htmlPath, awsUrl) => {
         const isExternalUrl = externalUrlRgx.test(srcset[0]);
 
         if (!isExternalUrl) {
-          srcset[0] = `${awsUrl}${srcset[0]}`;
+          srcset[0] = `${assestsUrl}${srcset[0]}`;
         }
 
         srcsets[i] = srcset.join(" ");
@@ -85,7 +85,7 @@ const webflowHtmlParser = (htmlPath, awsUrl) => {
         const isExternalUrl = externalUrlRgx.test(src);
 
         if (!isExternalUrl) {
-          el.setAttribute("src", `${awsUrl}${src}`);
+          el.setAttribute("src", `${assestsUrl}${src}`);
         }
       }
     });

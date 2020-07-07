@@ -1,7 +1,7 @@
 
-# CLI webflow to interactive
+# Webflow to interactive parser
 
-Extract content of a webflow page and create a single interactive file.
+Extract content of a webflow page and create a single interactive file that can be embedded in another HTML page.
 
 ## Install
 
@@ -21,7 +21,7 @@ Copy `./webflowExport/js` and `./webflowExport/images` to aws ad-assets bucket.
 
 Interactive settings can be change in `./config.toml`.
 
-Fill up information before building the interactive. Should only need to change `awsUrl` to the aws ad-assets bucket path.
+Fill up information before building the interactive. Should only need to change `assestsUrl` to the aws ad-assets bucket path.
 
 ## Create interactive
 

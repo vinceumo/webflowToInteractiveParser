@@ -5,7 +5,7 @@ const postcsswrap = require("postcss-wrap");
 const postcssurl = require("postcss-url");
 const cssnano = require("cssnano");
 
-const webflowCssParser = async (cssPath, awsUrl, wrapperId) => {
+const webflowCssParser = async (cssPath, assestsUrl, wrapperId) => {
   try {
     const files = await fsPromises.readdir(cssPath);
     const priorityCss = ["normalize.css", "webflow.css"];
@@ -28,7 +28,7 @@ const webflowCssParser = async (cssPath, awsUrl, wrapperId) => {
         postcsswrap({ selector: `#${wrapperId}` }),
         postcssurl({
           filter: "../images/*",
-          url: (asset) => `${awsUrl}/${asset.url}`,
+          url: (asset) => `${assestsUrl}/${asset.url}`,
         }),
         cssnano(),
       ])

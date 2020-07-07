@@ -1,5 +1,5 @@
 [interactive]
-awsUrl = "https://paidpost-assets.nyt.com/tbsi/test/webflow3/"
+assestsUrl = "https://paidpost-assets.nyt.com/tbsi/test/webflow3/"
 outputDir = "./dist"
 wrapperId = "tbs-body"
 

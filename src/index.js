@@ -7,13 +7,13 @@ const webflowCssParser = require("./webflowCssParser");
 const main = (config) => {
   const parsedCss = webflowCssParser(
     config.interactive.webflowFiles.css,
-    config.interactive.awsUrl,
+    config.interactive.assestsUrl,
     config.interactive.wrapperId
   );
 
   const parsedHtml = webflowHtmlParser(
     config.interactive.webflowFiles.html,
-    config.interactive.awsUrl
+    config.interactive.assestsUrl
   );
 
   parsedCss.then((cssResult) => {
