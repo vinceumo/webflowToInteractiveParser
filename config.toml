@@ -1,0 +1,8 @@
+[interactive]
+awsUrl = "https://paidpost-assets.nyt.com/tbsi/test/webflow3/"
+outputDir = "./dist"
+wrapperId = "tbs-body"
+
+    [interactive.webflowFiles]
+    html = "./webflowExport/index.html"
+    css = "./webflowExport/css"

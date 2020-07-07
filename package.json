@@ -1,0 +1,22 @@
+{
+  "name": "webflow-to-interactive-parser",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "node src/index"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "clipboardy": "^2.3.0",
+    "cssnano": "^4.1.10",
+    "jsdom": "^16.2.2",
+    "parcel": "^1.12.4",
+    "parcel-plugin-inline-source": "^1.0.0",
+    "postcss": "^7.0.32",
+    "postcss-url": "^8.0.0",
+    "postcss-wrap": "0.0.4",
+    "toml": "^3.0.0"
+  }
+}
