@@ -16,20 +16,17 @@ const webflowHtmlParser = (htmlPath, assestsUrl) => {
 
   const fontsHandler = () => {
     const scriptsEls = document.querySelectorAll("script");
-    const scriptsToPrint = [...scriptsEls].filter((el) =>
-      el.innerHTML.includes("WebFont.load(")
+    const scriptsToPrint = [...scriptsEls].filter(
+      (el) =>
+        el.innerHTML.includes("WebFont.load(") ||
+        el.src.includes("https://ajax.googleapis.com/ajax/libs/webfont/") ||
+        el.innerHTML.includes("Typekit.load(") ||
+        el.src.includes("https://use.typekit.net/")
+
     );
     scriptsToPrint.forEach((el) => {
       bodyEl.appendChild(el);
     });
-    if (scriptsToPrint.length) {
-      bodyEl.insertAdjacentHTML(
-        "afterbegin",
-        `
-        <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
-      `
-      );
-    }
   };
 
   const assetsHandler = () => {
