@@ -30,6 +30,10 @@ const webflowCssParser = async (cssPath, assestsUrl, wrapperId) => {
           filter: "../images/*",
           url: (asset) => `${assestsUrl}/${asset.url}`,
         }),
+        postcssurl({
+          filter: "../fonts/*",
+          url: (asset) => `${awsUrl}/${asset.url}`,
+        }),
         cssnano(),
       ])
         .process(css.join(""), { from: undefined, to: undefined })
